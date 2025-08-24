@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codypool - 이미지 선택</title>
+    <link rel="stylesheet" href="onboarding-image-select.css">
+</head>
+<body>
+    <div class="image-select-container">
+        <div class="progress-section">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <p class="progress-text">3 / 5 단계</p>
+        </div>
+
+        <header class="image-select-header">
+            <h1 class="image-select-title">추천을 시작하려면, 하나를 선택해주세요</h1>
+            <p class="image-select-subtitle">수영복 또는 수모 중 하나만 선택하면, 어울리는 조합을 AI가 추천해드립니다.</p>
+        </header>
+
+        <main class="image-select-main">
+            <div class="selection-options">
+                <h2 class="options-title">선택한 항목을 기준으로 추천이 시작됩니다</h2>
+                
+                <div class="option-cards">
+                    <div class="option-card" data-option="swimsuit">
+                        <div class="option-image">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjBGOUZGIi8+CjxwYXRoIGQ9Ik01MCAxMDAgQzUwIDc3LjkwOTQgNjcuOTA5NCA2MCA5MCA2MCBIMTEwIEMxMzIuMDkxIDYwIDE1MCA3Ny45MDk0IDE1MCAxMDAgQzE1MCAxMjIuMDkxIDEzMi4wOTEgMTQwIDExMCAxNDAgSDkwIEM2Ny45MDk0IDE0MCA1MCAxMjIuMDkxIDUwIDEwMFoiIGZpbGw9IiM2Njc5RUEiLz4KPHBhdGggZD0iTTYwIDExMCBDNjAgMTA1LjU5MiA2My41OTE5IDEwMiA2OCAxMDIgSDEzMiBDMTM2LjQwOCAxMDIgMTQwIDEwNS41OTIgMTQwIDExMCBMMTQwIDEyMCBDMTQwIDEyNC40MDggMTM2LjQwOCAxMjggMTMyIDEyOEg2OCBDNjMuNTkxOSAxMjggNjAgMTI0LjQwOCA2MCAxMjBMMTYwIDExMFoiIGZpbGw9IiM2Njc5RUEiLz4KPC9zdmc+" alt="수영복 예시" class="option-preview">
+                        </div>
+                        <div class="option-content">
+                            <h3 class="option-name">수영복 선택</h3>
+                            <p class="option-description">수영복 이미지를 업로드하거나 예시에서 선택하세요</p>
+                            <div class="upload-options">
+                                <button class="upload-btn" data-type="upload">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                        <polyline points="7,10 12,15 17,10"/>
+                                        <line x1="12" y1="15" x2="12" y2="3"/>
+                                    </svg>
+                                    갤러리에서 사진 선택
+                                </button>
+                                <button class="example-btn" data-type="example">
+                                    예시 이미지에서 선택
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="option-card" data-option="swimcap">
+                        <div class="option-image">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjBGOUZGIi8+CjxjaXJjbGUgY3g9IjEwMCIgY3k9IjgwIiByPSIzMCIgZmlsbD0iIzY2NzlFQSIvPgo8cGF0aCBkPSJNMTAwIDUwIEMxMDAgNTAgMTMwIDUwIDEzMCA4MCBDMTMwIDExMCAxMDAgMTMwIDEwMCAxMzAgQzEwMCAxMzAgNzAgMTEwIDcwIDgwIEM3MCA1MCAxMDAgNTAgMTAwIDUwWiIgZmlsbD0iIzY2NzlFQSIvPgo8L3N2Zz4=" alt="수모 예시" class="option-preview">
+                        </div>
+                        <div class="option-content">
+                            <h3 class="option-name">수모 선택</h3>
+                            <p class="option-description">수모 이미지를 업로드하거나 예시에서 선택하세요</p>
+                            <div class="upload-options">
+                                <button class="upload-btn" data-type="upload">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                        <polyline points="7,10 12,15 17,10"/>
+                                        <line x1="12" y1="15" x2="12" y2="3"/>
+                                    </svg>
+                                    갤러리에서 사진 선택
+                                </button>
+                                <button class="example-btn" data-type="example">
+                                    예시 이미지에서 선택
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <p class="info-text">선택한 이미지는 AI 분석용으로만 사용되며, 저장되지 않습니다</p>
+            </div>
+
+            <div class="action-section">
+                <button class="cta-button" id="recommend-btn" disabled>
+                    추천 받기
+                </button>
+            </div>
+        </main>
+
+        <div class="navigation-section">
+            <button class="nav-button back-btn" onclick="history.back()">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15,18 9,12 15,6"/>
+                </svg>
+                이전으로
+            </button>
+        </div>
+    </div>
+
+    <!-- 파일 업로드 input (숨김) -->
+    <input type="file" id="file-input" accept="image/*" style="display: none;">
+    
+    <!-- 예시 이미지 모달 -->
+    <div class="modal" id="example-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>예시 이미지 선택</h3>
+                <button class="modal-close" id="modal-close">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"/>
+                        <line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="example-grid" id="example-grid">
+                    <!-- 예시 이미지들이 동적으로 추가됩니다 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="onboarding-image-select.js"></script>
+</body>
+</html> 

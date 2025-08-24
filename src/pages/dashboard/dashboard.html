@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codypool - 내 코디</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header Navigation -->
+        <header class="dashboard-header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <h1 class="logo">Codypool</h1>
+                </div>
+                
+                <nav class="main-navigation">
+                    <button class="nav-item active" data-page="dashboard">
+                        <span class="nav-icon">🏠</span>
+                        <span class="nav-text">내 코디</span>
+                    </button>
+                    <button class="nav-item" data-page="ai-recommendation">
+                        <span class="nav-icon">🤖</span>
+                        <span class="nav-text">AI 추천</span>
+                    </button>
+                    <button class="nav-item" data-page="mypage">
+                        <span class="nav-icon">👤</span>
+                        <span class="nav-text">마이페이지</span>
+                    </button>
+                </nav>
+
+                <div class="header-actions">
+                    <button class="notification-button" id="notification-button">
+                        <span class="notification-icon">🔔</span>
+                        <span class="notification-badge" id="notification-badge">2</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Welcome Section -->
+            <section class="welcome-section">
+                <div class="welcome-content">
+                    <h2 class="welcome-title">최근 본 코디와 저장한 스타일을 한눈에</h2>
+                    <p class="welcome-subtitle">마음에 들었던 조합은 다시 확인하고, 더 비슷한 스타일을 추천받아보세요</p>
+                </div>
+            </section>
+
+            <!-- Recent Codies Section -->
+            <section class="recent-codies-section">
+                <div class="section-header">
+                    <h3 class="section-title">최근 본 코디</h3>
+                    <button class="view-all-button">전체보기</button>
+                </div>
+                
+                <div class="codies-grid" id="recent-codies">
+                    <!-- Recent Codies will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Saved Codies Section -->
+            <section class="saved-codies-section">
+                <div class="section-header">
+                    <h3 class="section-title">저장한 코디</h3>
+                    <div class="section-actions">
+                        <button class="sort-button" id="sort-button">
+                            <span class="sort-icon">📊</span>
+                            <span class="sort-text">최신순</span>
+                        </button>
+                        <button class="filter-button" id="filter-button">
+                            <span class="filter-icon">🔍</span>
+                            <span class="filter-text">필터</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="codies-list" id="saved-codies">
+                    <!-- Saved Codies will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Quick Recommendation Section -->
+            <section class="quick-recommendation-section">
+                <div class="quick-recommendation-card">
+                    <div class="card-content">
+                        <h3 class="card-title">빠른 AI 재추천 받기</h3>
+                        <p class="card-description">닉네임, 체형, 피부톤 정보를 유지한 상태로 추천을 시작합니다</p>
+                        <button class="quick-recommendation-button" id="quick-recommendation">
+                            <span class="button-icon">⚡</span>
+                            <span class="button-text">빠른 추천 시작</span>
+                        </button>
+                    </div>
+                    <div class="card-illustration">
+                        <div class="illustration-icon">🎯</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Mobile Bottom Navigation -->
+        <nav class="mobile-bottom-nav">
+            <button class="bottom-nav-item active" data-page="dashboard">
+                <span class="bottom-nav-icon">🏠</span>
+                <span class="bottom-nav-text">내 코디</span>
+            </button>
+            <button class="bottom-nav-item" data-page="ai-recommendation">
+                <span class="bottom-nav-icon">🤖</span>
+                <span class="bottom-nav-text">AI 추천</span>
+            </button>
+            <button class="bottom-nav-item" data-page="saved">
+                <span class="bottom-nav-icon">💾</span>
+                <span class="bottom-nav-text">저장함</span>
+            </button>
+            <button class="bottom-nav-item" data-page="mypage">
+                <span class="bottom-nav-icon">👤</span>
+                <span class="bottom-nav-text">마이</span>
+            </button>
+        </nav>
+
+        <!-- Sidebar (Desktop) -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-section">
+                    <h4 class="sidebar-title">마이페이지</h4>
+                    <ul class="sidebar-menu">
+                        <li><button class="sidebar-item" data-page="profile">프로필 관리</button></li>
+                        <li><button class="sidebar-item" data-page="settings">설정</button></li>
+                        <li><button class="sidebar-item" data-page="support">고객지원</button></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-section">
+                    <button class="logout-button" id="logout-button">
+                        <span class="logout-icon">🚪</span>
+                        <span class="logout-text">로그아웃</span>
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Notification Panel -->
+        <div class="notification-panel" id="notification-panel">
+            <div class="notification-header">
+                <h3 class="notification-title">알림</h3>
+                <button class="notification-close" id="notification-close">×</button>
+            </div>
+            <div class="notification-list">
+                <div class="notification-item">
+                    <div class="notification-icon">🎉</div>
+                    <div class="notification-content">
+                        <p class="notification-text">새로운 스타일이 추천되었습니다!</p>
+                        <p class="notification-time">방금 전</p>
+                    </div>
+                </div>
+                <div class="notification-item">
+                    <div class="notification-icon">💾</div>
+                    <div class="notification-content">
+                        <p class="notification-text">러블리 베이지 코디가 저장되었습니다</p>
+                        <p class="notification-time">5분 전</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Overlay -->
+        <div class="loading-overlay" id="loading-overlay">
+            <div class="loading-spinner"></div>
+            <p class="loading-text">AI가 추천을 준비하고 있어요...</p>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html> 

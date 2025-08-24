@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codypool - 저장 완료</title>
+    <link rel="stylesheet" href="onboarding-complete.css">
+</head>
+<body>
+    <div class="complete-container">
+        <div class="progress-section">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <p class="progress-text">5 / 5 단계</p>
+        </div>
+
+        <main class="complete-main">
+            <div class="success-section">
+                <div class="success-icon">
+                    <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22,4 12,14.01 9,11.01"/>
+                    </svg>
+                </div>
+                
+                <h1 class="success-title">첫 번째 코디 저장이 완료되었어요</h1>
+                <p class="success-subtitle">당신만의 스타일을 저장했어요. 다음 코디도 만나보세요.</p>
+                
+                <div class="saved-info">
+                    <div class="saved-preview">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjBGOUZGIi8+CjxwYXRoIGQ9Ik01MCAxMDAgQzUwIDc3LjkwOTQgNjcuOTA5NCA2MCA5MCA2MCBIMTEwIEMxMzIuMDkxIDYwIDE1MCA3Ny45MDk0IDE1MCAxMDAgQzE1MCAxMjIuMDkxIDEzMi4wOTEgMTQwIDExMCAxNDAgSDkwIEM2Ny45MDk0IDE0MCA1MCAxMjIuMDkxIDUwIDEwMFoiIGZpbGw9IiM2Njc5RUEiLz4KPHBhdGggZD0iTTYwIDExMCBDNjAgMTA1LjU5MiA2My41OTE5IDEwMiA2OCAxMDIgSDEzMiBDMTM2LjQwOCAxMDIgMTQwIDEwNS41OTIgMTQwIDExMCBMMTQwIDEyMCBDMTQwIDEyNC40MDggMTM2LjQwOCAxMjggMTMyIDEyOEg2OCBDNjMuNTkxOSAxMjggNjAgMTI0LjQwOCA2MCAxMjBMMTYwIDExMFoiIGZpbGw9IiM2Njc5RUEiLz4KPGNpcmNsZSBjeD0iMTAwIiBjeT0iODAiIHI9IjMwIiBmaWxsPSIjNjY3OUVBIi8+CjxwYXRoIGQ9Ik0xMDAgNTAgQzEwMCA1MCAxMzAgNTAgMTMwIDgwIEMxMzAgMTEwIDEwMCAxMzAgMTAwIDEzMCBDMTAwIDEzMCA3MCAxMTAgNzAgODAgQzcwIDUwIDEwMCA1MCAxMDAgNTBaIiBmaWxsPSIjNjY3OUVBIi8+Cjwvc3ZnPg==" alt="저장된 코디" class="saved-image">
+                    </div>
+                    <div class="saved-details">
+                        <h3 class="saved-name">러블리 베이지 코디</h3>
+                        <p class="saved-tags">#러블리 #베이지 #시크</p>
+                        <p class="saved-date">방금 전 저장됨</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="next-recommendation">
+                <h2 class="next-title">비슷한 스타일도 궁금하다면</h2>
+                <p class="next-subtitle">저장한 스타일과 비슷한 코디를 계속 추천해드릴게요</p>
+                <p class="next-subtitle">새로운 이미지로 다시 추천을 받아볼 수도 있어요</p>
+                
+                <div class="option-buttons">
+                    <button class="option-btn similar-btn" id="similar-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 12l2 2 4-4"/>
+                            <path d="M21 12c-1 0-2-1-2-2s1-2 2-2 2 1 2 2-1 2-2 2z"/>
+                            <path d="M3 12c1 0 2-1 2-2s-1-2-2-2-2 1-2 2 1 2 2 2z"/>
+                            <path d="M12 3c0 1-1 2-2 2s-2-1-2-2 1-2 2-2 2 1 2 2z"/>
+                            <path d="M12 21c0-1 1-2 2-2s2 1 2 2-1 2-2 2-2-1-2-2z"/>
+                        </svg>
+                        비슷한 스타일 더 보기
+                    </button>
+                    
+                    <button class="option-btn new-btn" id="new-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7,10 12,15 17,10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        새로운 이미지로 다시 추천받기
+                    </button>
+                </div>
+            </div>
+
+            <div class="action-section">
+                <button class="cta-button" id="next-recommend-btn">
+                    다음 코디 추천받기
+                </button>
+            </div>
+        </main>
+
+        <div class="navigation-section">
+            <button class="nav-button dashboard-btn" id="dashboard-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="7"/>
+                    <rect x="14" y="3" width="7" height="7"/>
+                    <rect x="14" y="14" width="7" height="7"/>
+                    <rect x="3" y="14" width="7" height="7"/>
+                </svg>
+                대시보드로 이동
+            </button>
+        </div>
+    </div>
+
+    <!-- Success Animation Overlay -->
+    <div class="success-overlay" id="success-overlay">
+        <div class="success-animation">
+            <div class="checkmark">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22,4 12,14.01 9,11.01"/>
+                </svg>
+            </div>
+            <p class="animation-text">저장 완료!</p>
+        </div>
+    </div>
+
+    <script src="onboarding-complete.js"></script>
+</body>
+</html> 

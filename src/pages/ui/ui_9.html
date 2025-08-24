@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codypool - 회원정보 수정</title>
+    <link rel="stylesheet" href="ui_9.css">
+</head>
+<body>
+    <div class="mypage-edit-container">
+        <!-- Header -->
+        <header class="edit-header">
+            <div class="header-content">
+                <button class="back-btn" onclick="history.back()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15,18 9,12 15,6"/>
+                    </svg>
+                </button>
+                <h1 class="page-title">회원정보 수정</h1>
+                <div class="header-spacer"></div>
+            </div>
+        </header>
+
+        <!-- Info Section -->
+        <section class="info-section">
+            <h2 class="info-title">내 정보를 수정하면, 추천도 더 정확해져요</h2>
+            <p class="info-subtitle">닉네임, 체형, 피부톤 정보를 변경하면 AI 추천 결과도 업데이트됩니다</p>
+        </section>
+
+        <!-- Edit Form -->
+        <main class="edit-form">
+            <form id="profileEditForm">
+                <!-- Nickname Section -->
+                <div class="form-group">
+                    <label for="nickname" class="form-label">
+                        <span class="label-text">닉네임</span>
+                        <span class="label-desc">서비스 내에서 표시될 이름입니다</span>
+                    </label>
+                    <input type="text" id="nickname" name="nickname" value="스타일러" maxlength="10" class="form-input" placeholder="닉네임을 입력하세요">
+                    <div class="input-info">최대 10자까지 입력 가능합니다</div>
+                </div>
+
+                <!-- Body Type Section -->
+                <div class="form-group">
+                    <label class="form-label">
+                        <span class="label-text">체형 선택</span>
+                        <span class="label-desc">당신의 체형에 어울리는 스타일을 추천합니다</span>
+                    </label>
+                    <div class="option-grid body-type-grid">
+                        <button type="button" class="option-card" data-value="slim">
+                            <div class="option-icon">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="15" y="8" width="10" height="24" rx="5"/>
+                                    <circle cx="20" cy="6" r="3"/>
+                                </svg>
+                            </div>
+                            <div class="option-text">슬림형</div>
+                        </button>
+                        <button type="button" class="option-card active" data-value="medium">
+                            <div class="option-icon">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="14" y="8" width="12" height="24" rx="6"/>
+                                    <circle cx="20" cy="6" r="3"/>
+                                </svg>
+                            </div>
+                            <div class="option-text">중간형</div>
+                        </button>
+                        <button type="button" class="option-card" data-value="solid">
+                            <div class="option-icon">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="13" y="8" width="14" height="24" rx="7"/>
+                                    <circle cx="20" cy="6" r="3"/>
+                                </svg>
+                            </div>
+                            <div class="option-text">탄탄형</div>
+                        </button>
+                        <button type="button" class="option-card" data-value="muscular">
+                            <div class="option-icon">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="12" y="8" width="16" height="24" rx="8"/>
+                                    <circle cx="20" cy="6" r="3"/>
+                                </svg>
+                            </div>
+                            <div class="option-text">근육형</div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Skin Tone Section -->
+                <div class="form-group">
+                    <label class="form-label">
+                        <span class="label-text">피부톤 선택</span>
+                        <span class="label-desc">피부톤에 어울리는 색상 조합을 추천해드려요</span>
+                    </label>
+                    <div class="option-grid skin-tone-grid">
+                        <button type="button" class="option-card" data-value="light">
+                            <div class="option-color light-tone"></div>
+                            <div class="option-text">밝은톤</div>
+                        </button>
+                        <button type="button" class="option-card active" data-value="medium">
+                            <div class="option-color medium-tone"></div>
+                            <div class="option-text">중간톤</div>
+                        </button>
+                        <button type="button" class="option-card" data-value="dark">
+                            <div class="option-color dark-tone"></div>
+                            <div class="option-text">어두운톤</div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="form-actions">
+                    <button type="button" class="action-btn cancel-btn" onclick="history.back()">이전으로 돌아가기</button>
+                    <button type="submit" class="action-btn save-btn">정보 수정하기</button>
+                </div>
+            </form>
+        </main>
+
+        <!-- Success Toast -->
+        <div class="toast" id="success-toast">
+            <div class="toast-content">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20,6 9,17 4,12"/>
+                </svg>
+                <span>회원 정보가 수정되었습니다</span>
+            </div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <a href="ui_7.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="7"/>
+                    <rect x="14" y="3" width="7" height="7"/>
+                    <rect x="14" y="14" width="7" height="7"/>
+                    <rect x="3" y="14" width="7" height="7"/>
+                </svg>
+                <span>홈</span>
+            </a>
+            <a href="ui_8.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+                <span>저장함</span>
+            </a>
+            <a href="ui_9.html" class="nav-item active">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
+                </svg>
+                <span>마이</span>
+            </a>
+        </nav>
+    </div>
+
+    <script src="ui_9.js"></script>
+</body>
+</html>

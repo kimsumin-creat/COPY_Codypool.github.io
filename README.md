@@ -1,205 +1,182 @@
-# CodyPool - AI 코디 추천 서비스
+# Codypool Frontend
 
-AI 기반 개인 맞춤형 코디 추천 서비스입니다. 사용자의 스타일 선호도와 상황에 맞는 최적의 코디를 추천해드립니다.
+AI 코디 추천 서비스의 프론트엔드 애플리케이션입니다.
 
-## 🚀 배포 상태
+## 🚀 프로젝트 개요
 
-[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/your-username/codypool)
-[![GitHub Actions](https://github.com/your-username/codypool/workflows/Deploy%20to%20Vercel/badge.svg)](https://github.com/your-username/codypool/actions)
+Codypool은 사용자의 취향과 상황에 맞는 완벽한 코디를 AI가 추천해주는 서비스입니다.
 
-**🌐 Live Demo:** https://codypool.vercel.app  
-**📊 Health Check:** https://codypool.vercel.app/api/health
+### 주요 기능
 
-## ✨ 주요 기능
-
-- 🤖 **AI 기반 코디 추천**: 개인 맞춤형 스타일 추천
-- 📱 **PWA 지원**: 모바일 앱처럼 사용 가능
-- 🎨 **반응형 디자인**: 모든 디바이스에서 최적화
-- ⚡ **빠른 로딩**: 최적화된 성능과 캐싱
-- 🔒 **오프라인 지원**: 인터넷 없이도 기본 기능 사용
-
-## 🛠 기술 스택
-
-### Frontend
-- **React 18** - 사용자 인터페이스
-- **Vite** - 빌드 도구 및 개발 서버
-- **React Router** - 클라이언트 사이드 라우팅
-- **CSS Variables** - 디자인 시스템
-- **Service Worker** - PWA 및 오프라인 지원
-
-### Backend
-- **Vercel Functions** - 서버리스 API
-- **Node.js** - 런타임 환경
-
-### 배포 & CI/CD
-- **Vercel** - 호스팅 및 배포
-- **GitHub Actions** - 자동화된 배포 파이프라인
-- **Lighthouse CI** - 성능 모니터링
-
-## 📦 설치 및 실행
-
-### 사전 요구사항
-- Node.js 18.0.0 이상
-- npm 8.0.0 이상
-
-### 로컬 개발
-
-```bash
-# 저장소 클론
-git clone https://github.com/your-username/codypool.git
-cd codypool
-
-# 프론트엔드 디렉토리로 이동
-cd frontend
-
-# 의존성 설치
-npm install
-
-# 개발 서버 실행
-npm run dev
-```
-
-브라우저에서 `http://localhost:3000`으로 접속하세요.
-
-### 빌드 및 배포
-
-```bash
-# 프로덕션 빌드
-npm run build
-
-# 빌드 결과 미리보기
-npm run preview
-```
-
-## 🚀 배포 가이드
-
-### 1. Vercel 배포 (권장)
-
-1. **Vercel 계정 생성**: [vercel.com](https://vercel.com)에서 계정 생성
-2. **GitHub 연동**: GitHub 저장소와 Vercel 프로젝트 연결
-3. **환경 변수 설정**:
-   ```
-   NODE_ENV=production
-   VITE_API_URL=https://your-api-domain.com
-   ```
-
-### 2. GitHub Actions 자동 배포
-
-1. **GitHub Secrets 설정**:
-   - `VERCEL_TOKEN`: Vercel API 토큰
-   - `VERCEL_ORG_ID`: Vercel 조직 ID
-   - `VERCEL_PROJECT_ID`: Vercel 프로젝트 ID
-
-2. **자동 배포 트리거**:
-   - `main` 브랜치에 푸시 시 자동 배포
-   - Pull Request 시 미리보기 배포
-
-### 3. 수동 배포
-
-```bash
-# Vercel CLI 설치
-npm i -g vercel
-
-# 로그인
-vercel login
-
-# 배포
-vercel --prod
-```
+- **AI 코디 추천**: 사용자 정보와 이미지를 분석하여 맞춤형 코디 추천
+- **온보딩 시스템**: 단계별 사용자 정보 수집 및 서비스 안내
+- **코디 저장 및 관리**: 마음에 드는 코디를 저장하고 관리
+- **반응형 디자인**: 모바일과 데스크톱에서 최적화된 사용자 경험
 
 ## 📁 프로젝트 구조
 
 ```
-codypool/
-├── frontend/                 # 프론트엔드 애플리케이션
-│   ├── public/              # 정적 파일
-│   │   ├── assets/          # 이미지, 아이콘, 폰트
-│   │   ├── manifest.webmanifest  # PWA 매니페스트
-│   │   └── service-worker.js     # 서비스 워커
-│   ├── src/                 # 소스 코드
-│   │   ├── components/      # 재사용 가능한 컴포넌트
-│   │   ├── pages/          # 페이지 컴포넌트
-│   │   ├── styles/         # 스타일 파일
-│   │   ├── services/       # API 서비스
-│   │   └── utils/          # 유틸리티 함수
-│   ├── api/                # Vercel Functions
-│   ├── vite.config.js      # Vite 설정
-│   └── vercel.json         # Vercel 배포 설정
-├── .github/workflows/      # GitHub Actions
-└── README.md              # 프로젝트 문서
+frontend/
+├── public/
+│   └── index.html
+├── src/
+│   ├── assets/           # 이미지, 아이콘, 폰트
+│   ├── components/       # React 컴포넌트
+│   │   ├── common/      # 공통 UI 컴포넌트
+│   │   ├── layout/      # 레이아웃 컴포넌트
+│   │   └── specific/    # 특정 기능 컴포넌트
+│   ├── pages/           # 페이지 컴포넌트
+│   │   ├── Home/        # 홈페이지
+│   │   ├── Auth/        # 인증 페이지
+│   │   ├── Onboarding/  # 온보딩 페이지
+│   │   ├── Recommendation/ # 추천 페이지
+│   │   ├── MyPage/      # 마이페이지
+│   │   └── ErrorFallback/ # 에러 페이지
+│   ├── services/        # API 서비스
+│   ├── hooks/           # 커스텀 훅
+│   ├── utils/           # 유틸리티 함수
+│   ├── styles/          # CSS 스타일
+│   ├── App.jsx          # 메인 앱 컴포넌트
+│   └── main.jsx         # 앱 진입점
+├── SITEMAP/             # 사이트맵
+└── package.json
 ```
+
+## 🛠️ 기술 스택
+
+- **React 18**: 사용자 인터페이스 구축
+- **React Router**: 클라이언트 사이드 라우팅
+- **Vite**: 빠른 개발 서버 및 빌드 도구
+- **CSS3**: 모던 스타일링 및 반응형 디자인
+- **JavaScript ES6+**: 최신 JavaScript 기능 활용
+
+## 🚀 시작하기
+
+### 필수 요구사항
+
+- Node.js 16.0.0 이상
+- npm 또는 yarn
+
+### 설치 및 실행
+
+1. **의존성 설치**
+   ```bash
+   npm install
+   ```
+
+2. **개발 서버 실행**
+   ```bash
+   npm run dev
+   ```
+
+3. **브라우저에서 확인**
+   ```
+   http://localhost:3000
+   ```
+
+### 빌드
+
+```bash
+npm run build
+```
+
+### 린트 검사
+
+```bash
+npm run lint
+```
+
+## 📱 페이지 구성
+
+### Level 1: 홈
+- **홈페이지** (`/`): 서비스 소개 및 시작점
+
+### Level 2: 인증 및 온보딩
+- **로그인/회원가입** (`/auth`): 사용자 인증
+- **온보딩 1단계** (`/onboarding/step1`): 튜토리얼
+- **온보딩 2단계** (`/onboarding/step2`): 기본정보 입력
+- **온보딩 3단계** (`/onboarding/step3`): 이미지 선택
+- **온보딩 4단계** (`/onboarding/step4`): AI 추천 결과
+- **온보딩 5단계** (`/onboarding/step5`): 저장 성공
+
+### Level 3: 추천 및 관리
+- **AI 추천** (`/recommendation`): 추천 결과 확인
+- **마이페이지** (`/mypage`): 사용자 정보 관리
+- **저장된 코디** (`/mypage/saved`): 저장된 코디 목록
+- **프로필 수정** (`/mypage/edit`): 프로필 정보 수정
+
+### 에러 처리
+- **에러 페이지** (`/error`): 에러 및 빈 상태 처리
 
 ## 🎨 디자인 시스템
 
 ### 색상 팔레트
-- **Primary**: `#6366f1` (인디고)
-- **Success**: `#10b981` (에메랄드)
-- **Warning**: `#f59e0b` (앰버)
-- **Error**: `#ef4444` (레드)
+- **Primary**: #007bff (파란색)
+- **Secondary**: #6c757d (회색)
+- **Success**: #28a745 (초록색)
+- **Danger**: #dc3545 (빨간색)
+- **Warning**: #ffc107 (노란색)
 
 ### 타이포그래피
-- **Font Family**: Pretendard, system-ui
-- **Font Sizes**: xs(0.75rem) ~ 4xl(2.25rem)
+- **제목**: 2.5rem (데스크톱), 2rem (모바일)
+- **부제목**: 1.2rem
+- **본문**: 1rem
+- **작은 텍스트**: 0.9rem
 
 ### 반응형 브레이크포인트
-- **Mobile**: < 640px
-- **Tablet**: 640px ~ 1024px
-- **Desktop**: > 1024px
+- **모바일**: 768px 이하
+- **태블릿**: 768px - 1024px
+- **데스크톱**: 1024px 이상
 
 ## 🔧 개발 가이드
 
-### 코드 스타일
+### 컴포넌트 생성 규칙
+
+1. **공통 컴포넌트** (`components/common/`): 여러 페이지에서 재사용
+2. **레이아웃 컴포넌트** (`components/layout/`): Header, Footer 등
+3. **특정 컴포넌트** (`components/specific/`): 특정 기능에만 사용
+
+### 스타일링 규칙
+
+1. **CSS 변수 사용**: `var(--primary-color)` 형태로 일관성 유지
+2. **모바일 퍼스트**: 모바일부터 시작하여 데스크톱으로 확장
+3. **BEM 방법론**: 클래스 명명 규칙 준수
+
+### API 통신
+
+1. **서비스 레이어**: `services/` 폴더에 API 로직 분리
+2. **에러 처리**: try-catch로 일관된 에러 처리
+3. **로딩 상태**: 사용자 경험을 위한 로딩 상태 관리
+
+## 📊 성능 최적화
+
+- **코드 스플리팅**: React.lazy()를 사용한 지연 로딩
+- **이미지 최적화**: WebP 포맷 및 적절한 크기 조정
+- **번들 최적화**: Vite의 자동 최적화 활용
+
+## 🧪 테스트
 
 ```bash
-# 린팅
-npm run lint
-
-# 린팅 자동 수정
-npm run lint:fix
-
-# 코드 포맷팅
-npm run format
-
-# 타입 체크
-npm run type-check
+# 테스트 실행 (추후 추가 예정)
+npm test
 ```
 
-### 테스트
+## 📦 배포
+
+### 환경 변수 설정
 
 ```bash
-# 단위 테스트 실행
-npm run test
-
-# 테스트 커버리지
-npm run test:coverage
-
-# UI 테스트 러너
-npm run test:ui
+# .env 파일 생성
+REACT_APP_API_URL=http://localhost:3001/api
 ```
 
-### 성능 최적화
+### 빌드 및 배포
 
 ```bash
-# 번들 분석
-npm run analyze
-
-# 빌드 최적화
 npm run build
 ```
 
-## 📊 성능 지표
-
-- **Lighthouse Score**: 95+ (Performance, Accessibility, Best Practices, SEO)
-- **First Contentful Paint**: < 1.5s
-- **Largest Contentful Paint**: < 2.5s
-- **Cumulative Layout Shift**: < 0.1
-
-## 🔒 보안
-
-- **Content Security Policy** 적용
-- **HTTPS** 강제 적용
-- **XSS Protection** 헤더 설정
-- **CORS** 정책 구성
+빌드된 파일은 `dist/` 폴더에 생성됩니다.
 
 ## 🤝 기여하기
 
@@ -211,20 +188,12 @@ npm run build
 
 ## 📄 라이선스
 
-이 프로젝트는 MIT 라이선스 하에 배포됩니다. 자세한 내용은 [LICENSE](LICENSE) 파일을 참조하세요.
+이 프로젝트는 MIT 라이선스 하에 배포됩니다.
 
-## 📞 지원
+## 📞 문의
 
-- **이슈 리포트**: [GitHub Issues](https://github.com/your-username/codypool/issues)
-- **문의**: support@codypool.com
-- **문서**: [docs.codypool.com](https://docs.codypool.com)
-
-## 🙏 감사의 말
-
-- [Vercel](https://vercel.com) - 호스팅 및 배포 플랫폼
-- [React](https://reactjs.org) - 사용자 인터페이스 라이브러리
-- [Vite](https://vitejs.dev) - 빌드 도구
+프로젝트에 대한 문의사항이 있으시면 이슈를 생성해주세요.
 
 ---
 
-**CodyPool Team** © 2024. All rights reserved.
+**Codypool** - AI가 추천하는 나만의 코디 🎨 

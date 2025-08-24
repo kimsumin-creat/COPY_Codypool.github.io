@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codypool - AI 추천 결과</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="onboarding-result.css">
+</head>
+<body>
+    <div class="result-container">
+        <!-- Progress Bar -->
+        <div class="progress-section">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <p class="progress-text">4 / 5 단계</p>
+        </div>
+
+        <!-- Header Section -->
+        <header class="result-header">
+            <div class="header-content">
+                <h1 class="result-title">이 스타일, 당신에게 어울려요</h1>
+                <p class="result-subtitle">AI가 선택한 조합이에요. 마음에 드는 코디를 저장하거나 바로 구매해보세요.</p>
+            </div>
+        </header>
+
+        <!-- Recommendation Results -->
+        <section class="recommendation-section">
+            <div class="section-header">
+                <h2 class="section-title">추천 코디 리스트</h2>
+                <p class="section-subtitle">당신의 스타일에 맞춘 최대 5가지 조합을 준비했어요</p>
+            </div>
+
+            <!-- Style Filter -->
+            <div class="filter-section">
+                <h3 class="filter-title">스타일별로 다시 보고 싶다면</h3>
+                <div class="filter-tags">
+                    <button class="filter-tag active" data-style="all">전체</button>
+                    <button class="filter-tag" data-style="lovely">러블리</button>
+                    <button class="filter-tag" data-style="chic">시크</button>
+                    <button class="filter-tag" data-style="casual">캐주얼</button>
+                    <button class="filter-tag" data-style="vivid">비비드</button>
+                    <button class="filter-tag" data-style="simple">심플</button>
+                </div>
+                <p class="filter-help">클릭하면 해당 스타일에 가까운 추천으로 재정렬됩니다</p>
+            </div>
+
+            <!-- Recommendation Cards -->
+            <div class="recommendation-cards" id="recommendation-cards">
+                <!-- Card 1 -->
+                <div class="recommendation-card" data-style="lovely">
+                    <div class="card-image">
+                        <img src="placeholder-swimsuit-1.jpg" alt="러블리 베이지 수영복" class="card-img">
+                        <div class="card-overlay">
+                            <button class="save-button" data-card-id="1">
+                                <span class="save-icon">💾</span>
+                                <span class="save-text">저장하기</span>
+                            </button>
+                            <button class="buy-button" data-card-id="1">
+                                <span class="buy-icon">🛒</span>
+                                <span class="buy-text">구매하기</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">러블리 베이지</h3>
+                        <div class="card-tags">
+                            <span class="tag">#러블리</span>
+                            <span class="tag">#베이지</span>
+                            <span class="tag">#감성핏</span>
+                        </div>
+                        <p class="card-description">부드러운 베이지 톤의 러블리한 수영복과 어울리는 수모 조합</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="recommendation-card" data-style="chic">
+                    <div class="card-image">
+                        <img src="placeholder-swimsuit-2.jpg" alt="시크 블랙 수영복" class="card-img">
+                        <div class="card-overlay">
+                            <button class="save-button" data-card-id="2">
+                                <span class="save-icon">💾</span>
+                                <span class="save-text">저장하기</span>
+                            </button>
+                            <button class="buy-button" data-card-id="2">
+                                <span class="buy-icon">🛒</span>
+                                <span class="buy-text">구매하기</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">시크 블랙</h3>
+                        <div class="card-tags">
+                            <span class="tag">#시크</span>
+                            <span class="tag">#블랙</span>
+                            <span class="tag">#모던</span>
+                        </div>
+                        <p class="card-description">클래식한 블랙 수영복과 세련된 수모의 완벽한 조화</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="recommendation-card" data-style="vivid">
+                    <div class="card-image">
+                        <img src="placeholder-swimsuit-3.jpg" alt="비비드 블루 수영복" class="card-img">
+                        <div class="card-overlay">
+                            <button class="save-button" data-card-id="3">
+                                <span class="save-icon">💾</span>
+                                <span class="save-text">저장하기</span>
+                            </button>
+                            <button class="buy-button" data-card-id="3">
+                                <span class="buy-icon">🛒</span>
+                                <span class="buy-text">구매하기</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">비비드 블루</h3>
+                        <div class="card-tags">
+                            <span class="tag">#비비드</span>
+                            <span class="tag">#블루</span>
+                            <span class="tag">#컬러믹스</span>
+                        </div>
+                        <p class="card-description">선명한 블루 톤의 생동감 있는 수영복과 매칭 수모</p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="recommendation-card" data-style="casual">
+                    <div class="card-image">
+                        <img src="placeholder-swimsuit-4.jpg" alt="캐주얼 그레이 수영복" class="card-img">
+                        <div class="card-overlay">
+                            <button class="save-button" data-card-id="4">
+                                <span class="save-icon">💾</span>
+                                <span class="save-text">저장하기</span>
+                            </button>
+                            <button class="buy-button" data-card-id="4">
+                                <span class="buy-icon">🛒</span>
+                                <span class="buy-text">구매하기</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">캐주얼 그레이</h3>
+                        <div class="card-tags">
+                            <span class="tag">#캐주얼</span>
+                            <span class="tag">#그레이</span>
+                            <span class="tag">#편안함</span>
+                        </div>
+                        <p class="card-description">편안한 그레이 톤의 캐주얼한 수영복과 수모 조합</p>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="recommendation-card" data-style="simple">
+                    <div class="card-image">
+                        <img src="placeholder-swimsuit-5.jpg" alt="심플 화이트 수영복" class="card-img">
+                        <div class="card-overlay">
+                            <button class="save-button" data-card-id="5">
+                                <span class="save-icon">💾</span>
+                                <span class="save-text">저장하기</span>
+                            </button>
+                            <button class="buy-button" data-card-id="5">
+                                <span class="buy-icon">🛒</span>
+                                <span class="buy-text">구매하기</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">심플 화이트</h3>
+                        <div class="card-tags">
+                            <span class="tag">#심플</span>
+                            <span class="tag">#화이트</span>
+                            <span class="tag">#클린</span>
+                        </div>
+                        <p class="card-description">깔끔한 화이트 톤의 심플한 수영복과 수모 조합</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <button class="cta-button" id="next-recommendation">
+                <span class="button-text">다음 추천 받기</span>
+                <span class="button-icon">→</span>
+            </button>
+            <p class="cta-help">저장한 스타일과 비슷한 코디를 계속 추천해드릴게요</p>
+        </section>
+
+        <!-- Back Button -->
+        <section class="back-section">
+            <button class="back-button" id="back-button">
+                <span class="back-icon">←</span>
+                <span class="back-text">이전으로</span>
+            </button>
+        </section>
+
+        <!-- Success Modal -->
+        <div class="modal-overlay" id="success-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">저장 완료!</h3>
+                    <button class="modal-close" id="modal-close">×</button>
+                </div>
+                <div class="modal-body">
+                    <div class="success-icon">✅</div>
+                    <p class="modal-message">선택한 코디가 내 코디함에 저장되었습니다.</p>
+                    <p class="modal-submessage">언제든 다시 확인하고 수정할 수 있어요.</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="modal-button" id="modal-ok">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="onboarding-result.js"></script>
+</body>
+</html> 

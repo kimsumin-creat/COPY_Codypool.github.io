@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codypool - 로그인 및 기본정보 입력</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="onboarding-auth-profile.css">
+</head>
+<body>
+    <div class="auth-container">
+        <!-- Progress Bar -->
+        <div class="progress-section">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <p class="progress-text">2 / 5 단계</p>
+        </div>
+
+        <!-- Header Section -->
+        <header class="auth-header">
+            <div class="header-content">
+                <h1 class="auth-title">당신만을 위한 추천을 위해, 잠깐만 정보를 알려주세요</h1>
+                <p class="auth-subtitle">AI가 더 정확하게 스타일을 분석할 수 있어요.</p>
+                <p class="auth-privacy">개인 정보는 절대 외부에 노출되지 않습니다.</p>
+            </div>
+        </header>
+
+        <!-- Social Login Section -->
+        <section class="social-login-section">
+            <h2 class="section-title">간편하게 로그인하고 바로 시작하세요</h2>
+            <div class="social-buttons">
+                <button class="social-button kakao-button" id="kakao-login">
+                    <span class="social-icon">💬</span>
+                    <span class="social-text">카카오로 시작하기</span>
+                </button>
+                <button class="social-button google-button" id="google-login">
+                    <span class="social-icon">🔍</span>
+                    <span class="social-text">구글로 시작하기</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Profile Form Section -->
+        <section class="profile-form-section">
+            <h2 class="section-title">내 스타일을 위한 기본정보 입력</h2>
+            
+            <form class="profile-form" id="profile-form">
+                <!-- Nickname Field -->
+                <div class="form-group">
+                    <label for="nickname" class="form-label">닉네임</label>
+                    <input type="text" id="nickname" name="nickname" class="form-input" 
+                           placeholder="자유롭게 입력해주세요" required>
+                    <p class="form-help">코디 이름표로 사용됩니다. 자유롭게 입력해주세요.</p>
+                </div>
+
+                <!-- Body Type Field -->
+                <div class="form-group">
+                    <label class="form-label">체형</label>
+                    <div class="option-grid">
+                        <button type="button" class="option-button" data-value="slim" data-field="bodyType">
+                            <span class="option-icon">🏃‍♀️</span>
+                            <span class="option-text">슬림형</span>
+                        </button>
+                        <button type="button" class="option-button" data-value="medium" data-field="bodyType">
+                            <span class="option-icon">👩‍🦰</span>
+                            <span class="option-text">중간형</span>
+                        </button>
+                        <button type="button" class="option-button" data-value="athletic" data-field="bodyType">
+                            <span class="option-icon">💪</span>
+                            <span class="option-text">탄탄형</span>
+                        </button>
+                        <button type="button" class="option-button" data-value="muscular" data-field="bodyType">
+                            <span class="option-icon">🏋️‍♀️</span>
+                            <span class="option-text">근육형</span>
+                        </button>
+                    </div>
+                    <p class="form-help">당신의 체형에 어울리는 스타일을 찾기 위해 필요해요.</p>
+                </div>
+
+                <!-- Skin Tone Field -->
+                <div class="form-group">
+                    <label class="form-label">피부톤</label>
+                    <div class="option-grid">
+                        <button type="button" class="option-button" data-value="light" data-field="skinTone">
+                            <span class="option-icon">☀️</span>
+                            <span class="option-text">밝은톤</span>
+                        </button>
+                        <button type="button" class="option-button" data-value="medium" data-field="skinTone">
+                            <span class="option-icon">🌤️</span>
+                            <span class="option-text">중간톤</span>
+                        </button>
+                        <button type="button" class="option-button" data-value="dark" data-field="skinTone">
+                            <span class="option-icon">🌙</span>
+                            <span class="option-text">어두운톤</span>
+                        </button>
+                    </div>
+                    <p class="form-help">피부톤에 어울리는 색상 조합 추천을 위해 입력해주세요.</p>
+                </div>
+            </form>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <button class="cta-button" id="next-button" disabled>
+                <span class="button-text">다음 단계로</span>
+                <span class="button-icon">→</span>
+            </button>
+            <p class="cta-help">모든 항목을 선택해주세요</p>
+        </section>
+
+        <!-- Back Button -->
+        <section class="back-section">
+            <button class="back-button" id="back-button">
+                <span class="back-icon">←</span>
+                <span class="back-text">이전으로</span>
+            </button>
+        </section>
+    </div>
+
+    <script src="onboarding-auth-profile.js"></script>
+</body>
+</html> 

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codypool - 저장된 코디</title>
+    <link rel="stylesheet" href="ui_8.css">
+</head>
+<body>
+    <div class="mypage-container">
+        <!-- Header -->
+        <header class="mypage-header">
+            <div class="header-content">
+                <button class="back-btn" onclick="history.back()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15,18 9,12 15,6"/>
+                    </svg>
+                </button>
+                <h1 class="page-title">저장된 코디</h1>
+                <button class="menu-btn" id="menu-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="1"/>
+                        <circle cx="19" cy="12" r="1"/>
+                        <circle cx="5" cy="12" r="1"/>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- Profile Summary -->
+        <section class="profile-summary">
+            <div class="profile-info">
+                <div class="profile-avatar">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMzAiIGZpbGw9IiM2Njc5RUEiLz4KPHBhdGggZD0iTTMwIDIwQzM0LjQxODMgMjAgMzggMjMuNTgxNyAzOCAyOEMzOCAzMi40MTgzIDM0LjQxODMgMzYgMzAgMzZDMjUuNTgxNyAzNiAyMiAzMi40MTgzIDIyIDI4QzIyIDIzLjU4MTcgMjUuNTgxNyAyMCAzMCAyMFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0xNSAzNEMxNSAzNCAyMCAyOCAzMCAyOEM0MCAyOCA0NSAzNCA0NSAzNEw0MCA0NEMzNSA0NCAzMCA0NCAyNSA0NEwyMCAzNFoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPg==" alt="프로필" class="avatar">
+                </div>
+                <div class="profile-details">
+                    <h2 class="profile-name">스타일러</h2>
+                    <p class="profile-stats">저장된 코디 <span class="count">12</span>개</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filter Section -->
+        <section class="filter-section">
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-filter="all">전체</button>
+                <button class="filter-tab" data-filter="recent">최근</button>
+                <button class="filter-tab" data-filter="favorite">즐겨찾기</button>
+            </div>
+            <div class="search-box">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="m21 21-4.35-4.35"/>
+                </svg>
+                <input type="text" placeholder="코디 검색..." id="search-input">
+            </div>
+        </section>
+
+        <!-- Saved Codies -->
+        <main class="saved-content">
+            <div class="codies-grid" id="codies-grid">
+                <!-- Cody Card 1 -->
+                <div class="cody-card" data-category="recent" data-tags="러블리,베이지,시크">
+                    <div class="cody-image">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjBGOUZGIi8+CjxwYXRoIGQ9Ik01MCAxMDAgQzUwIDc3LjkwOTQgNjcuOTA5NCA2MCA5MCA2MEgxMTAgQzEzMi4wOTEgNjAgMTUwIDc3LjkwOTQgMTUwIDEwMCBDMTUwIDEyMi4wOTEgMTMyLjA5MSAxNDAgMTEwIDE0MEg5MCBDNjcuOTA5NCAxNDAgNTAgMTIyLjA5MSA1MCAxMDBaIiBmaWxsPSIjNjY3OUVBIi8+CjxwYXRoIGQ9Ik02MCAxMTAgQzYwIDEwNS41OTIgNjMuNTkxOSAxMDIgNjggMTAySDEzMiBDMTM2LjQwOCAxMDIgMTQwIDEwNS41OTIgMTQwIDExMCBMMTQwIDEyMCBDMTQwIDEyNC40MDggMTM2LjQwOCAxMjggMTMyIDEyOEg2OCBDNjMuNTkxOSAxMjggNjAgMTI0LjQwOCA2MCAxMjBMMTYwIDExMFoiIGZpbGw9IiM2Njc5RUEiLz4KPGNpcmNsZSBjeD0iMTAwIiBjeT0iODAiIHI9IjMwIiBmaWxsPSIjNjY3OUVBIi8+CjxwYXRoIGQ9Ik0xMDAgNTAgQzEwMCA1MCAxMzAgNTAgMTMwIDgwIEMxMzAgMTEwIDEwMCAxMzAgMTAwIDEzMCBDMTAwIDEzMCA3MCAxMTAgNzAgODAgQzcwIDUwIDEwMCA1MCAxMDAgNTBaIiBmaWxsPSIjNjY3OUVBIi8+Cjwvc3ZnPg==" alt="러블리 베이지 코디">
+                        <div class="cody-overlay">
+                            <button class="favorite-btn" data-favorite="true">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="cody-info">
+                        <h3 class="cody-name">러블리 베이지</h3>
+                        <p class="cody-tags">#러블리 #베이지 #시크</p>
+                        <p class="cody-date">2일 전</p>
+                    </div>
+                    <div class="cody-actions">
+                        <button class="action-btn recommend-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 12l2 2 4-4"/>
+                                <path d="M21 12c-1 0-2-1-2-2s1-2 2-2 2 1 2 2-1 2-2 2z"/>
+                                <path d="M3 12c1 0 2-1 2-2s-1-2-2-2-2 1-2 2 1 2 2 2z"/>
+                                <path d="M12 3c0 1-1 2-2 2s-2-1-2-2 1-2 2-2 2 1 2 2z"/>
+                                <path d="M12 21c0-1 1-2 2-2s2 1 2 2-1 2-2 2-2-1-2-2z"/>
+                            </svg>
+                            비슷한 스타일
+                        </button>
+                        <button class="action-btn delete-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="3,6 5,6 21,6"/>
+                                <path d="M19,6v14a2,2 0 0,1 -2,2H7a2,2 0 0,1 -2,-2V6m3,0V4a2,2 0 0,1 2,-2h4a2,2 0 0,1 2,2v2"/>
+                            </svg>
+                            삭제
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Cody Card 2 -->
+                <div class="cody-card" data-category="recent" data-tags="비비드,블루,캐주얼">
+                    <div class="cody-image">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjBGOUZGIi8+CjxwYXRoIGQ9Ik01MCAxMDAgQzUwIDc3LjkwOTQgNjcuOTA5NCA2MCA5MCA2MEgxMTAgQzEzMi4wOTEgNjAgMTUwIDc3LjkwOTQgMTUwIDEwMCBDMTUwIDEyMi4wOTEgMTMyLjA5MSAxNDAgMTEwIDE0MEg5MCBDNjcuOTA5NCAxNDAgNTAgMTIyLjA5MSA1MCAxMDBaIiBmaWxsPSIjRjA5RkZGIi8+CjxwYXRoIGQ9Ik02MCAxMTAgQzYwIDEwNS41OTIgNjMuNTkxOSAxMDIgNjggMTAySDEzMiBDMTM2LjQwOCAxMDIgMTQwIDEwNS41OTIgMTQwIDExMCBMMTQwIDEyMCBDMTQwIDEyNC40MDggMTM2LjQwOCAxMjggMTMyIDEyOEg2OCBDNjMuNTkxOSAxMjggNjAgMTI0LjQwOCA2MCAxMjBMMTYwIDExMFoiIGZpbGw9IiNGMDlGRkYiLz4KPGNpcmNsZSBjeD0iMTAwIiBjeT0iODAiIHI9IjMwIiBmaWxsPSIjRjA5RkZGIi8+CjxwYXRoIGQ9Ik0xMDAgNTAgQzEwMCA1MCAxMzAgNTAgMTMwIDgwIEMxMzAgMTEwIDEwMCAxMzAgMTAwIDEzMCBDMTAwIDEzMCA3MCAxMTAgNzAgODAgQzcwIDUwIDEwMCA1MCAxMDAgNTBaIiBmaWxsPSIjRjA5RkZGIi8+Cjwvc3ZnPg==" alt="비비드 블루 코디">
+                        <div class="cody-overlay">
+                            <button class="favorite-btn" data-favorite="false">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="cody-info">
+                        <h3 class="cody-name">비비드 블루</h3>
+                        <p class="cody-tags">#비비드 #블루 #캐주얼</p>
+                        <p class="cody-date">1주일 전</p>
+                    </div>
+                    <div class="cody-actions">
+                        <button class="action-btn recommend-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 12l2 2 4-4"/>
+                                <path d="M21 12c-1 0-2-1-2-2s1-2 2-2 2 1 2 2-1 2-2 2z"/>
+                                <path d="M3 12c1 0 2-1 2-2s-1-2-2-2-2 1-2 2 1 2 2 2z"/>
+                                <path d="M12 3c0 1-1 2-2 2s-2-1-2-2 1-2 2-2 2 1 2 2z"/>
+                                <path d="M12 21c0-1 1-2 2-2s2 1 2 2-1 2-2 2-2-1-2-2z"/>
+                            </svg>
+                            비슷한 스타일
+                        </button>
+                        <button class="action-btn delete-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="3,6 5,6 21,6"/>
+                                <path d="M19,6v14a2,2 0 0,1 -2,2H7a2,2 0 0,1 -2,-2V6m3,0V4a2,2 0 0,1 2,-2h4a2,2 0 0,1 2,2v2"/>
+                            </svg>
+                            삭제
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Cody Card 3 -->
+                <div class="cody-card" data-category="favorite" data-tags="시크,레드,감성">
+                    <div class="cody-image">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjBGOUZGIi8+CjxwYXRoIGQ9Ik01MCAxMDAgQzUwIDc3LjkwOTQgNjcuOTA5NCA2MCA5MCA2MEgxMTAgQzEzMi4wOTEgNjAgMTUwIDc3LjkwOTQgMTUwIDEwMCBDMTUwIDEyMi4wOTEgMTMyLjA5MSAxNDAgMTEwIDE0MEg5MCBDNjcuOTA5NCAxNDAgNTAgMTIyLjA5MSA1MCAxMDBaIiBmaWxsPSIjRkZGMDAwIi8+CjxwYXRoIGQ9Ik02MCAxMTAgQzYwIDEwNS41OTIgNjMuNTkxOSAxMDIgNjggMTAySDEzMiBDMTM2LjQwOCAxMDIgMTQwIDEwNS41OTIgMTQwIDExMCBMMTQwIDEyMCBDMTQwIDEyNC40MDggMTM2LjQwOCAxMjggMTMyIDEyOEg2OCBDNjMuNTkxOSAxMjggNjAgMTI0LjQwOCA2MCAxMjBMMTYwIDExMFoiIGZpbGw9IiNGRkYwMDAiLz4KPGNpcmNsZSBjeD0iMTAwIiBjeT0iODAiIHI9IjMwIiBmaWxsPSIjRkZGMDAwIi8+CjxwYXRoIGQ9Ik0xMDAgNTAgQzEwMCA1MCAxMzAgNTAgMTMwIDgwIEMxMzAgMTEwIDEwMCAxMzAgMTAwIDEzMCBDMTAwIDEzMCA3MCAxMTAgNzAgODAgQzcwIDUwIDEwMCA1MCAxMDAgNTBaIiBmaWxsPSIjRkZGMDAwIi8+Cjwvc3ZnPg==" alt="레드 시크 코디">
+                        <div class="cody-overlay">
+                            <button class="favorite-btn" data-favorite="true">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="cody-info">
+                        <h3 class="cody-name">레드 시크</h3>
+                        <p class="cody-tags">#시크 #레드 #감성</p>
+                        <p class="cody-date">2주일 전</p>
+                    </div>
+                    <div class="cody-actions">
+                        <button class="action-btn recommend-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 12l2 2 4-4"/>
+                                <path d="M21 12c-1 0-2-1-2-2s1-2 2-2 2 1 2 2-1 2-2 2z"/>
+                                <path d="M3 12c1 0 2-1 2-2s-1-2-2-2-2 1-2 2 1 2 2 2z"/>
+                                <path d="M12 3c0 1-1 2-2 2s-2-1-2-2 1-2 2-2 2 1 2 2z"/>
+                                <path d="M12 21c0-1 1-2 2-2s2 1 2 2-1 2-2 2-2-1-2-2z"/>
+                            </svg>
+                            비슷한 스타일
+                        </button>
+                        <button class="action-btn delete-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="3,6 5,6 21,6"/>
+                                <path d="M19,6v14a2,2 0 0,1 -2,2H7a2,2 0 0,1 -2,-2V6m3,0V4a2,2 0 0,1 2,-2h4a2,2 0 0,1 2,2v2"/>
+                            </svg>
+                            삭제
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Empty State (Hidden by default) -->
+        <div class="empty-state" id="empty-state" style="display: none;">
+            <div class="empty-icon">
+                <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+            </div>
+            <h3>저장된 코디가 없어요</h3>
+            <p>마음에 드는 코디를 저장하면 여기에 표시됩니다</p>
+            <button class="cta-button" onclick="window.location.href='ui_2.html'">
+                첫 코디 추천받기
+            </button>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <a href="ui_7.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="7"/>
+                    <rect x="14" y="3" width="7" height="7"/>
+                    <rect x="14" y="14" width="7" height="7"/>
+                    <rect x="3" y="14" width="7" height="7"/>
+                </svg>
+                <span>홈</span>
+            </a>
+            <a href="ui_8.html" class="nav-item active">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+                <span>저장함</span>
+            </a>
+            <a href="ui_9.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
+                </svg>
+                <span>마이</span>
+            </a>
+        </nav>
+
+        <!-- Delete Confirmation Modal -->
+        <div class="modal" id="delete-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>코디 삭제</h3>
+                    <button class="modal-close" id="delete-modal-close">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="6" x2="6" y2="18"/>
+                            <line x1="6" y1="6" x2="18" y2="18"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>이 코디를 삭제하시겠습니까?</p>
+                    <p class="modal-subtitle">삭제된 코디는 복구할 수 없습니다.</p>
+                </div>
+                <div class="modal-actions">
+                    <button class="modal-btn cancel-btn" id="delete-cancel">취소</button>
+                    <button class="modal-btn confirm-btn" id="delete-confirm">삭제</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="ui_8.js"></script>
+</body>
+</html> 

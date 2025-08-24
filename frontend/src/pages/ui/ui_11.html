@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codypool - 저장된 코디 없음</title>
+    <link rel="stylesheet" href="ui_11.css">
+</head>
+<body>
+    <div class="empty-container">
+        <!-- Header -->
+        <header class="empty-header">
+            <div class="header-content">
+                <button class="back-btn" onclick="history.back()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15,18 9,12 15,6"/>
+                    </svg>
+                </button>
+                <h1 class="page-title">저장함</h1>
+                <div class="header-spacer"></div>
+            </div>
+        </header>
+
+        <!-- Empty State Content -->
+        <main class="empty-content">
+            <div class="empty-illustration">
+                <div class="empty-icon">
+                    <svg width="160" height="160" viewBox="0 0 160 160" fill="none">
+                        <!-- Empty Wardrobe/Closet Illustration -->
+                        <rect x="20" y="30" width="120" height="100" rx="8" fill="#F9FAFB" stroke="#E5E7EB" stroke-width="2"/>
+                        
+                        <!-- Wardrobe Frame -->
+                        <rect x="25" y="35" width="110" height="90" rx="4" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1"/>
+                        
+                        <!-- Empty Hangers -->
+                        <g transform="translate(40, 45)">
+                            <path d="M0 10 Q5 5 10 10" stroke="#D1D5DB" stroke-width="2" fill="none"/>
+                            <circle cx="5" cy="8" r="2" fill="none" stroke="#D1D5DB" stroke-width="1.5"/>
+                        </g>
+                        
+                        <g transform="translate(70, 45)">
+                            <path d="M0 10 Q5 5 10 10" stroke="#D1D5DB" stroke-width="2" fill="none"/>
+                            <circle cx="5" cy="8" r="2" fill="none" stroke="#D1D5DB" stroke-width="1.5"/>
+                        </g>
+                        
+                        <g transform="translate(100, 45)">
+                            <path d="M0 10 Q5 5 10 10" stroke="#D1D5DB" stroke-width="2" fill="none"/>
+                            <circle cx="5" cy="8" r="2" fill="none" stroke="#D1D5DB" stroke-width="1.5"/>
+                        </g>
+                        
+                        <!-- Wardrobe Rod -->
+                        <line x1="30" y1="50" x2="130" y2="50" stroke="#E5E7EB" stroke-width="2"/>
+                        
+                        <!-- Empty Shelves -->
+                        <line x1="30" y1="80" x2="130" y2="80" stroke="#E5E7EB" stroke-width="1"/>
+                        <line x1="30" y1="100" x2="130" y2="100" stroke="#E5E7EB" stroke-width="1"/>
+                        
+                        <!-- Wardrobe Handles -->
+                        <circle cx="45" cy="90" r="3" fill="#D1D5DB"/>
+                        <circle cx="115" cy="90" r="3" fill="#D1D5DB"/>
+                        
+                        <!-- Floating Hearts/Stars (indicating potential) -->
+                        <g opacity="0.3">
+                            <path d="M20 20 L22 16 L24 20 L20 20 Z" fill="#6679EA"/>
+                            <circle cx="135" cy="25" r="2" fill="#F09FFF"/>
+                            <path d="M25 140 L27 136 L29 140 L25 140 Z" fill="#6679EA"/>
+                            <circle cx="130" cy="135" r="2" fill="#F09FFF"/>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="empty-message">
+                <h2 class="empty-title">저장된 코디가 없습니다</h2>
+                <div class="empty-description">
+                    <p>첫 AI 추천을 받아보세요.</p>
+                    <p>마음에 드는 스타일을 저장하면, 여기에 표시됩니다.</p>
+                </div>
+            </div>
+
+            <div class="empty-actions">
+                <button class="action-btn primary-btn" id="start-cody-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polygon points="10,8 16,12 10,16 10,8"/>
+                    </svg>
+                    코디 시작하기
+                </button>
+            </div>
+
+            <!-- Onboarding Preview -->
+            <div class="preview-section">
+                <h3 class="preview-title">이런 스타일을 추천받을 수 있어요</h3>
+                <div class="preview-grid">
+                    <div class="preview-card">
+                        <div class="preview-image">
+                            <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                                <rect width="80" height="80" rx="12" fill="#F0F9FF"/>
+                                <circle cx="40" cy="30" r="12" fill="#6679EA"/>
+                                <rect x="28" y="45" width="24" height="20" rx="12" fill="#6679EA"/>
+                            </svg>
+                        </div>
+                        <div class="preview-info">
+                            <h4>러블리 스타일</h4>
+                            <p>귀엽고 사랑스러운 코디</p>
+                        </div>
+                    </div>
+                    
+                    <div class="preview-card">
+                        <div class="preview-image">
+                            <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                                <rect width="80" height="80" rx="12" fill="#FDF2F8"/>
+                                <circle cx="40" cy="30" r="12" fill="#F09FFF"/>
+                                <rect x="28" y="45" width="24" height="20" rx="12" fill="#F09FFF"/>
+                            </svg>
+                        </div>
+                        <div class="preview-info">
+                            <h4>시크 스타일</h4>
+                            <p>세련되고 고급스러운 코디</p>
+                        </div>
+                    </div>
+                    
+                    <div class="preview-card">
+                        <div class="preview-image">
+                            <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                                <rect width="80" height="80" rx="12" fill="#FFFBEB"/>
+                                <circle cx="40" cy="30" r="12" fill="#F59E0B"/>
+                                <rect x="28" y="45" width="24" height="20" rx="12" fill="#F59E0B"/>
+                            </svg>
+                        </div>
+                        <div class="preview-info">
+                            <h4>비비드 스타일</h4>
+                            <p>활기차고 화사한 코디</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How it Works -->
+            <div class="how-it-works">
+                <h3 class="how-title">간단한 3단계로 완성</h3>
+                <div class="steps-container">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>이미지 업로드</h4>
+                            <p>수영복이나 수모 사진을 올려주세요</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step-arrow">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9,18 15,12 9,6"/>
+                        </svg>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>AI 분석</h4>
+                            <p>당신의 스타일을 분석해드려요</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step-arrow">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9,18 15,12 9,6"/>
+                        </svg>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>맞춤 추천</h4>
+                            <p>완벽한 코디를 추천받아보세요</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <a href="ui_7.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="7"/>
+                    <rect x="14" y="3" width="7" height="7"/>
+                    <rect x="14" y="14" width="7" height="7"/>
+                    <rect x="3" y="14" width="7" height="7"/>
+                </svg>
+                <span>홈</span>
+            </a>
+            <a href="ui_8.html" class="nav-item active">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+                <span>저장함</span>
+            </a>
+            <a href="ui_9.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
+                </svg>
+                <span>마이</span>
+            </a>
+        </nav>
+    </div>
+
+    <script src="ui_11.js"></script>
+</body>
+</html>
